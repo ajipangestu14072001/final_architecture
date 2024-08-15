@@ -40,6 +40,12 @@ dependencies:
   json_annotation: ^4.8.1
   dio: ^5.3.2
 
+  shared_component:
+    git:
+      url: https://gitlab.com/developer-kbni/flutter-utility.git
+      ref: 3.0.1
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

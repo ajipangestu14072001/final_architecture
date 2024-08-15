@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../app/route/app_routes.dart';
 import '../controller/login_controller.dart';
 
 class LoginPage extends StatelessWidget {
@@ -31,7 +32,10 @@ class LoginPage extends StatelessWidget {
                 return const CircularProgressIndicator();
               }
               return ElevatedButton(
-                onPressed: controller.login,
+                // onPressed: controller.login,
+                onPressed: (){
+                  Get.toNamed(AppRoutes.home);
+                },
                 child: const Text('Login'),
               );
             }),
