@@ -6,7 +6,6 @@ import 'environment.dart';
 import 'log_interceptor.dart' as log;
 
 class DioModule with DioMixin implements Dio {
-  final Environment env = Environment();
   DioModule._() {
     options = BaseOptions(
       contentType: 'application/json',
@@ -15,7 +14,7 @@ class DioModule with DioMixin implements Dio {
       receiveTimeout: const Duration(seconds: 60),
       followRedirects: true,
       receiveDataWhenStatusError: true,
-      baseUrl: env.API_URL_DEV_NEW,
+      baseUrl: Environment.current.apiUrl,
     );
 
     interceptors.add(ApiInterceptor());

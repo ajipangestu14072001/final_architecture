@@ -34,9 +34,15 @@ class HomeController extends GetxController {
     final remoteConfig = FirebaseRemoteConfig.instance;
 
     try {
-      await remoteConfig.fetchAndActivate();
-      final String jsonString = remoteConfig.getString("grid_menu_visibility");
+      await remoteConfig.setConfigSettings(RemoteConfigSettings(
+        fetchTimeout: const Duration(seconds: 10),
+        minimumFetchInterval: const Duration(seconds: 5),
+      ));
 
+      final bool updated = await remoteConfig.fetchAndActivate();
+      print('Remote Config fetched and activated: $updated');
+
+      final String jsonString = remoteConfig.getString("grid_menu_visibility");
       print('Remote Config JSON: $jsonString');
 
       if (jsonString.isNotEmpty) {
@@ -57,4 +63,5 @@ class HomeController extends GetxController {
       print("Error fetching remote config: $e");
     }
   }
+
 }
