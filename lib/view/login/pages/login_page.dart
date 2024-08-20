@@ -35,8 +35,8 @@ class LoginPage extends StatelessWidget {
               return ElevatedButton(
                 // onPressed: controller.login,
                 onPressed: (){
-                  FirebaseCrashlytics.instance.crash();
-                  // Get.toNamed(AppRoutes.home);
+                  // FirebaseCrashlytics.instance.crash();
+                  Get.toNamed(AppRoutes.home);
                 },
                 child: const Text('Login'),
               );
