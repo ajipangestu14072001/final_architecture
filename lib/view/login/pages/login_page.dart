@@ -1,3 +1,4 @@
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,7 +35,8 @@ class LoginPage extends StatelessWidget {
               return ElevatedButton(
                 // onPressed: controller.login,
                 onPressed: (){
-                  Get.toNamed(AppRoutes.home);
+                  FirebaseCrashlytics.instance.crash();
+                  // Get.toNamed(AppRoutes.home);
                 },
                 child: const Text('Login'),
               );
