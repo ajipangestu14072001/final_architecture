@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_component/shared_component.dart';
 import '../controller/home_controller.dart';
 
 class HomeView extends StatelessWidget {
@@ -17,9 +18,37 @@ class HomeView extends StatelessWidget {
             pinned: true,
             snap: false,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text('Title'),
+              title: CText('Home Page', fontSize: 16),
             ),
-            expandedHeight: 200,
+            expandedHeight: 100,
+          ),
+          SliverGrid(
+            delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                final menuItem = homeController.gridMenuItems[index];
+                return Card(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.network(
+                        menuItem.imageUrl,
+                        height: 80,
+                        width: 80,
+                        fit: BoxFit.cover,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(menuItem.title),
+                    ],
+                  ),
+                );
+              },
+              childCount: homeController.gridMenuItems.length,
+            ),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+            ),
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
