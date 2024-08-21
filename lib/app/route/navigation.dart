@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:get/get.dart';
 
 import 'app_routes.dart';
@@ -14,7 +16,13 @@ class Navigation {
     );
   }
 
-  static void navigateToLogin() {
-    Get.toNamed(AppRoutes.login);
+  static void navigateToLogin({VoidCallback? onFinish}) {
+    Get.toNamed(
+      AppRoutes.login,
+      arguments: {
+        'onFinish': onFinish,
+      },
+    );
   }
 }
+

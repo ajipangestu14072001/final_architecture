@@ -6,14 +6,21 @@ import '../../../repositories/login/login_repository.dart';
 
 class LoginController extends GetxController {
   final LoginRepository _repository;
+  final VoidCallback? onFinish;
 
-  LoginController(this._repository);
+  LoginController(this._repository, this.onFinish);
 
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
   var isLoading = false.obs;
   var loginError = ''.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    onFinish!.call();
+  }
 
   Future<void> login() async {
     isLoading.value = true;
@@ -30,6 +37,7 @@ class LoginController extends GetxController {
       isLoading.value = false;
 
       if (loginDM != null) {
+        onFinish?.call();
         final token = loginDM.token;
         Get.snackbar('Success', 'Login successful. Token: $token');
       } else {

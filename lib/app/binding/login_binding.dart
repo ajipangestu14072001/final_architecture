@@ -1,13 +1,20 @@
-import 'package:get/get.dart';
+import 'dart:ui';
 
+import 'package:get/get.dart';
+import '../../base/base_binding.dart';
 import '../../repositories/login/login_repository.dart';
 import '../../services/network/dio_module.dart';
 import '../../view/login/controller/login_controller.dart';
+import '../route/argument_helper.dart';
 
-class LoginBinding extends Bindings {
+
+class LoginBinding extends BaseBinding {
   @override
-  void dependencies() {
-    Get.lazyPut(() => LoginRepository(DioModule.getInstance()));
-    Get.lazyPut(() => LoginController(Get.find<LoginRepository>()));
+  void handleArguments() {
+    Get.lazyPut<LoginRepository>(() => LoginRepository(DioModule.getInstance()));
+    Get.lazyPut<LoginController>(
+          () => LoginController(Get.find<LoginRepository>(), ArgumentHelper.getOnFinish()),
+    );
   }
 }
+

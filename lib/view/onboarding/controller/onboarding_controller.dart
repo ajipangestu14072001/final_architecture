@@ -1,5 +1,6 @@
-import 'package:final_architecture/app/route/app_routes.dart';
 import 'package:get/get.dart';
+
+import '../../../app/route/navigation.dart';
 
 class OnboardingController extends GetxController {
   var currentPage = 0.obs;
@@ -19,7 +20,9 @@ class OnboardingController extends GetxController {
   }
 
   void finishOnboarding() {
-    Get.offAllNamed(AppRoutes.login);
+    Navigation.navigateToLogin(onFinish: (){
+      print("DWI AJI PANGESTU");
+    });
   }
 
   void skipOnboarding() {
