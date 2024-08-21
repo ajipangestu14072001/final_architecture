@@ -14,13 +14,6 @@ class Environment {
     try {
       final remoteConfig = FirebaseRemoteConfig.instance;
 
-      await remoteConfig.setConfigSettings(RemoteConfigSettings(
-        fetchTimeout: const Duration(seconds: 10),
-        minimumFetchInterval: const Duration(seconds: 5),
-      ));
-
-      await remoteConfig.fetchAndActivate();
-
       final apiUrlsJson = remoteConfig.getString('base_url_api');
       print('Fetched Remote Config JSON: $apiUrlsJson');
 

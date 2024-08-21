@@ -13,12 +13,12 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       body: Obx(() => CustomScrollView(
         slivers: [
-          const SliverAppBar(
+          SliverAppBar(
             floating: true,
             pinned: true,
             snap: false,
             flexibleSpace: FlexibleSpaceBar(
-              title: CText('Home Page', fontSize: 16),
+              title: CText('Home Page ${homeController.loginDM.token} ${homeController.username}', fontSize: 16),
             ),
             expandedHeight: 100,
           ),

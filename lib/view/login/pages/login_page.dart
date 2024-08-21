@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../app/route/app_routes.dart';
+import '../../../app/route/navigation.dart';
+import '../../../models/view_data_model/login_dm.dart';
 import '../controller/login_controller.dart';
 
 class LoginPage extends StatelessWidget {
@@ -36,7 +38,11 @@ class LoginPage extends StatelessWidget {
                 // onPressed: controller.login,
                 onPressed: (){
                   // FirebaseCrashlytics.instance.crash();
-                  Get.toNamed(AppRoutes.home);
+                  Navigation.navigateToHome(
+                    username: 'JohnDoe',
+                    data: LoginDM(token: 'example_token', userId: 'example_user_id'),
+                  );
+
                 },
                 child: const Text('Login'),
               );

@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:ui';
 import 'package:final_architecture/services/network/environment.dart';
+import 'package:final_architecture/utils/firebase/remote_config_utils.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,6 +20,7 @@ Future<void> main() async {
     FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
     return true;
   };
+  await RemoteConfigUtils.initializeRemoteConfig();
   await Environment.initialize('dev');
   runApp(const MyApp());
 }
