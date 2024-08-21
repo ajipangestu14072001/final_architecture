@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'app/route/app_routes.dart';
+import 'app/route/screen.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: AppRoutes.splash,
+      initialRoute: Screen.splash,
       getPages: AppRoutes.getPages(),
     );
   }

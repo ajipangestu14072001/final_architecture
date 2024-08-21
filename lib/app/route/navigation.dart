@@ -1,14 +1,14 @@
 import 'dart:ui';
 
+import 'package:final_architecture/app/route/screen.dart';
 import 'package:get/get.dart';
 
-import 'app_routes.dart';
 import 'navigation_args_helper.dart';
 
 class Navigation {
   static void navigateToHome({String? username, required dynamic data}) {
     Get.toNamed(
-      AppRoutes.home,
+      Screen.home,
       arguments: NavigationArgsHelper.toJson({
         'username': username,
         'data': data,
@@ -18,11 +18,15 @@ class Navigation {
 
   static void navigateToLogin({VoidCallback? onFinish}) {
     Get.toNamed(
-      AppRoutes.login,
+      Screen.login,
       arguments: {
         'onFinish': onFinish,
       },
     );
+  }
+
+  static void goOnboarding(){
+    Get.offAllNamed(Screen.onboarding);
   }
 }
 

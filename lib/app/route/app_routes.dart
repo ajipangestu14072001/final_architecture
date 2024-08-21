@@ -1,3 +1,4 @@
+import 'package:final_architecture/app/route/screen.dart';
 import 'package:get/get.dart';
 import '../../view/home/pages/home_page.dart';
 import '../../view/login/pages/login_page.dart';
@@ -9,29 +10,25 @@ import '../binding/onboarding_binding.dart';
 import '../binding/splash_binding.dart';
 
 class AppRoutes {
-  static const login = '/login';
-  static const home = '/home';
-  static const onboarding = '/onboarding';
-  static const splash = '/splash';
 
   static List<GetPage> getPages() => [
     GetPage(
-      name: onboarding,
+      name: Screen.onboarding,
       page: () => const OnboardingView(),
       binding: OnboardingBinding(),
     ),
     GetPage(
-      name: login,
+      name: Screen.login,
       page: () => const LoginPage(),
       binding: LoginBinding(),
     ),
     GetPage(
-      name: home,
+      name: Screen.home,
       page: () => const HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
-      name: splash,
+      name: Screen.splash,
       page: () => const SplashView(),
       binding: SplashBinding(),
     ),
