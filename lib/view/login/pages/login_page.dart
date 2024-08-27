@@ -1,19 +1,17 @@
+import 'package:final_architecture/app/route/screen.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../app/route/app_routes.dart';
-import '../../../app/route/navigation.dart';
+import '../../../base/base_page.dart';
 import '../../../models/view_data_model/login_dm.dart';
 import '../controller/login_controller.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends BasePage<LoginController> {
   const LoginPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final controller = Get.find<LoginController>();
-
+  Widget buildPage(BuildContext context) {
+    final controller = this.controller;
     return Scaffold(
       appBar: AppBar(title: const Text('Login')),
       body: Padding(
@@ -38,19 +36,20 @@ class LoginPage extends StatelessWidget {
                 // onPressed: controller.login,
                 onPressed: (){
                   // FirebaseCrashlytics.instance.crash();
-                  Navigation.navigateToHome(
-                    username: 'JohnDoe',
-                    data: LoginDM(token: 'example_token', userId: 'example_user_id'),
+                  Get.toNamed(
+                    Screen.home,
+                    arguments: {
+                      'loginDM': LoginDM(token: 'example_token', userId: 'example_user_id'),
+                    },
                   );
-
                 },
                 child: const Text('Login'),
               );
             }),
             Obx(() {
-              if (controller.loginError.value.isNotEmpty) {
+              if (controller.errorMessage.value.isNotEmpty) {
                 return Text(
-                  controller.loginError.value,
+                  controller.errorMessage.value,
                   style: const TextStyle(color: Colors.red),
                 );
               }

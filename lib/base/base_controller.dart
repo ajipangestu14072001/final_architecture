@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 
 abstract class BaseController extends GetxController {
+  RxBool isLoading = false.obs;
+  RxString errorMessage = ''.obs;
+
   void handleArguments(Map<String, dynamic> arguments);
 
   @override
@@ -9,11 +12,9 @@ abstract class BaseController extends GetxController {
 
     final arguments = Get.arguments as Map<String, dynamic>?;
 
-    if (arguments == null || arguments.isEmpty) {
-      throw Exception('Arguments are required but none were provided.');
+    if (arguments != null && arguments.isNotEmpty) {
+      handleArguments(arguments);
     }
-
-    handleArguments(arguments);
   }
 }
 

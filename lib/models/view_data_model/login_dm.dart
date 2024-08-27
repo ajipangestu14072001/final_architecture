@@ -1,12 +1,10 @@
-import '../../app/route/navigation_args_helper.dart';
 
-class LoginDM implements ToJsonConvertible {
+class LoginDM {
   final String token;
   final String userId;
 
   LoginDM({required this.token, required this.userId});
 
-  @override
   Map<String, dynamic> toJson() => {
     'token': token,
     'userId': userId,

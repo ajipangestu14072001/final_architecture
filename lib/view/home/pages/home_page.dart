@@ -18,7 +18,7 @@ class HomeView extends StatelessWidget {
             pinned: true,
             snap: false,
             flexibleSpace: FlexibleSpaceBar(
-              title: CText('Home Page ${homeController.loginDM.token} ${homeController.username}', fontSize: 16),
+              title: CText('Home Page ${homeController.loginDM.token}', fontSize: 16),
             ),
             expandedHeight: 100,
           ),

@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import '../../../app/route/navigation_args_helper.dart';
 import '../../../base/base_controller.dart';
 import '../../../models/grid_menu_items.dart';
 import '../../../models/view_data_model/login_dm.dart';
@@ -32,7 +31,6 @@ class HomeController extends BaseController {
         'https://upload.wikimedia.org/wikipedia/commons/3/3e/Android_logo_2019.png'),
   ].obs;
 
-  late String username;
   late LoginDM loginDM;
 
   Map<String, bool>? _previousVisibilityMap;
@@ -90,12 +88,10 @@ class HomeController extends BaseController {
 
   @override
   void handleArguments(Map<String, dynamic> arguments) {
-    final argsHelper = NavigationArgsHelper(arguments);
-
-    username = argsHelper.getArgument<String>('username');
-    loginDM = argsHelper.getArgument<LoginDM>('data',
-        fromJson: (json) => LoginDM.fromJson(json));
-
+    if (arguments.containsKey('loginDM')) {
+      loginDM = arguments['loginDM'] as LoginDM;
+      print('Received LoginDM: $loginDM');
+    }
     _fetchRemoteConfig();
   }
 }

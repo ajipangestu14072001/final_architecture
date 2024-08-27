@@ -1,8 +1,9 @@
+import 'package:final_architecture/base/base_controller.dart';
 import 'package:get/get.dart';
 
-import '../../../app/route/navigation.dart';
+import '../../../app/route/screen.dart';
 
-class OnboardingController extends GetxController {
+class OnboardingController extends BaseController {
   var currentPage = 0.obs;
 
   final List<String> onboardingPages = [
@@ -20,12 +21,15 @@ class OnboardingController extends GetxController {
   }
 
   void finishOnboarding() {
-    Navigation.navigateToLogin(onFinish: (){
-      print("DWI AJI PANGESTU");
-    });
+    Get.toNamed(Screen.login);
   }
 
   void skipOnboarding() {
     finishOnboarding();
+  }
+
+  @override
+  void handleArguments(Map<String, dynamic> arguments) {
+    // TODO: implement handleArguments
   }
 }

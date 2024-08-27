@@ -1,30 +1,21 @@
+import 'package:final_architecture/base/base_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../../models/request/login_request.dart';
 import '../../../repositories/login/login_repository.dart';
 
-class LoginController extends GetxController {
+class LoginController extends BaseController {
   final LoginRepository _repository;
-  final VoidCallback? onFinish;
 
-  LoginController(this._repository, this.onFinish);
+  LoginController(this._repository);
 
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  var isLoading = false.obs;
-  var loginError = ''.obs;
-
-  @override
-  void onInit() {
-    super.onInit();
-    onFinish!.call();
-  }
-
   Future<void> login() async {
     isLoading.value = true;
-    loginError.value = '';
+    errorMessage.value = '';
 
     final request = LoginRequest(
       usernameOrEmail: usernameController.text,
@@ -37,17 +28,21 @@ class LoginController extends GetxController {
       isLoading.value = false;
 
       if (loginDM != null) {
-        onFinish?.call();
         final token = loginDM.token;
         Get.snackbar('Success', 'Login successful. Token: $token');
       } else {
-        loginError.value = 'Login failed. Please check your credentials.';
+        errorMessage.value = 'Login failed. Please check your credentials.';
         Get.snackbar('Error', 'Login failed. Please check your credentials.');
       }
     } catch (e) {
       isLoading.value = false;
-      loginError.value = 'An error occurred: ${e.toString()}';
+      errorMessage.value = 'An error occurred: ${e.toString()}';
       Get.snackbar('Error', 'An error occurred: ${e.toString()}');
     }
+  }
+
+  @override
+  void handleArguments(Map<String, dynamic> arguments) {
+    // TODO: implement handleArguments
   }
 }
