@@ -1,4 +1,3 @@
-import 'package:final_architecture/models/view_data_model/login_dm.dart';
 import 'package:get/get.dart';
 
 class Navigation {
