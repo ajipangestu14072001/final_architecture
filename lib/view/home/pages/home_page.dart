@@ -1,15 +1,14 @@
+import 'package:final_architecture/base/base_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_component/shared_component.dart';
 import '../controller/home_controller.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends BasePage<HomeController> {
   const HomeView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final HomeController homeController = Get.find<HomeController>();
-
+  Widget buildPage(BuildContext context) {
     return Scaffold(
       body: Obx(() => CustomScrollView(
         slivers: [
@@ -18,14 +17,14 @@ class HomeView extends StatelessWidget {
             pinned: true,
             snap: false,
             flexibleSpace: FlexibleSpaceBar(
-              title: CText('Home Page ${homeController.loginDM.token}', fontSize: 16),
+              title: CText('Home Page ${controller.loginDM.token}', fontSize: 16),
             ),
             expandedHeight: 100,
           ),
           SliverGrid(
             delegate: SliverChildBuilderDelegate(
                   (context, index) {
-                final menuItem = homeController.gridMenuItems[index];
+                final menuItem = controller.gridMenuItems[index];
                 return Card(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -42,7 +41,7 @@ class HomeView extends StatelessWidget {
                   ),
                 );
               },
-              childCount: homeController.gridMenuItems.length,
+              childCount: controller.gridMenuItems.length,
             ),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
@@ -54,10 +53,10 @@ class HomeView extends StatelessWidget {
             delegate: SliverChildBuilderDelegate(
                   (context, index) {
                 return ListTile(
-                  title: Text(homeController.items[index]),
+                  title: Text(controller.items[index]),
                 );
               },
-              childCount: homeController.items.length,
+              childCount: controller.items.length,
             ),
           ),
         ],

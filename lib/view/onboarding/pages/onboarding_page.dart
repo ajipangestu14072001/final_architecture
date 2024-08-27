@@ -1,12 +1,13 @@
+import 'package:final_architecture/base/base_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/onboarding_controller.dart';
 
-class OnboardingView extends StatelessWidget {
+class OnboardingView extends BasePage<OnboardingController> {
   const OnboardingView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildPage(BuildContext context) {
     final OnboardingController controller = Get.find<OnboardingController>();
 
     return Scaffold(
