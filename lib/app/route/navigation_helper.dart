@@ -8,12 +8,14 @@ class Navigation {
   }
 
   /// Navigasi ke halaman dengan argument
-  static void navigateToWithArguments(String routeName, {required Map<String, dynamic> arguments}) {
+  static void navigateToWithArguments(String routeName,
+      {required Map<String, dynamic> arguments}) {
     Get.toNamed(routeName, arguments: arguments);
   }
 
   /// Navigasi ke halaman dengan parameter query
-  static void navigateToWithParameters(String routeName, Map<String, String> parameters) {
+  static void navigateToWithParameters(
+      String routeName, Map<String, String> parameters) {
     Get.toNamed(routeName, parameters: parameters);
   }
 
@@ -40,5 +42,13 @@ class Navigation {
   /// Kembali ke halaman tertentu
   static void goBackTo(String routeName) {
     Get.until((route) => Get.currentRoute == routeName);
+  }
+
+  /// Navigasi ke halaman dengan refresh ketika kembali
+  static void navigateToWithRefreshOnBack(String routeName,
+      {required Function onRefresh}) {
+    Get.toNamed(routeName)?.then((_) {
+      onRefresh();
+    });
   }
 }
