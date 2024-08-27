@@ -8,7 +8,7 @@ class Navigation {
   }
 
   /// Navigasi ke halaman dengan argument
-  static void navigateToWithArguments(String routeName, {required Map<String, LoginDM> arguments}) {
+  static void navigateToWithArguments(String routeName, {required Map<String, dynamic> arguments}) {
     Get.toNamed(routeName, arguments: arguments);
   }
 
