@@ -1,3 +1,4 @@
+import 'package:final_architecture/app/route/navigation_helper.dart';
 import 'package:final_architecture/base/base_controller.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +22,7 @@ class OnboardingController extends BaseController {
   }
 
   void finishOnboarding() {
-    Get.toNamed(Screen.login);
+    Navigation.navigateTo(Screen.login);
   }
 
   void skipOnboarding() {

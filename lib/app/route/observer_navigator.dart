@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class NavigationUtil extends NavigatorObserver {
+class ObserverNavigator extends NavigatorObserver {
   @override
   void didPush(Route route, Route? previousRoute) {
     super.didPush(route, previousRoute);

@@ -2,6 +2,7 @@ import 'package:final_architecture/app/route/screen.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../app/route/navigation_helper.dart';
 import '../../../base/base_page.dart';
 import '../../../models/view_data_model/login_dm.dart';
 import '../controller/login_controller.dart';
@@ -36,12 +37,13 @@ class LoginPage extends BasePage<LoginController> {
                 // onPressed: controller.login,
                 onPressed: (){
                   // FirebaseCrashlytics.instance.crash();
-                  Get.toNamed(
+                  Navigation.navigateToWithArguments(
                     Screen.home,
                     arguments: {
                       'loginDM': LoginDM(token: 'example_token', userId: 'example_user_id'),
                     },
                   );
+
                 },
                 child: const Text('Login'),
               );

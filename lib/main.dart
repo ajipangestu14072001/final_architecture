@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ui';
 import 'package:final_architecture/services/network/environment.dart';
 import 'package:final_architecture/utils/firebase/remote_config_utils.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -8,7 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'app/route/app_routes.dart';
-import 'app/route/navigation.dart';
+import 'app/route/observer_navigator.dart';
 import 'app/route/screen.dart';
 import 'firebase_options.dart';
 
@@ -40,7 +39,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: Screen.splash,
       getPages: AppRoutes.getPages(),
-      navigatorObservers: [NavigationUtil()],
+      navigatorObservers: [ObserverNavigator()],
     );
   }
 }
