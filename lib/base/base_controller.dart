@@ -1,6 +1,11 @@
 import 'package:get/get.dart';
+import '../services/network/base_repo.dart';
 
-abstract class BaseController extends GetxController {
+abstract class BaseController<R extends BaseRepo?> extends GetxController {
+  final R? repository;
+
+  BaseController([this.repository]);
+
   RxBool isLoading = false.obs;
   RxString errorMessage = ''.obs;
 
@@ -17,4 +22,3 @@ abstract class BaseController extends GetxController {
     }
   }
 }
-

@@ -5,10 +5,8 @@ import 'package:get/get.dart';
 import '../../../models/request/login_request.dart';
 import '../../../repositories/login/login_repository.dart';
 
-class LoginController extends BaseController {
-  final LoginRepository _repository;
-
-  LoginController(this._repository);
+class LoginController extends BaseController<LoginRepository> {
+  LoginController(super.repository);
 
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
@@ -23,7 +21,7 @@ class LoginController extends BaseController {
     );
 
     try {
-      final loginDM = await _repository.login(request);
+      final loginDM = await repository?.login(request);
 
       isLoading.value = false;
 

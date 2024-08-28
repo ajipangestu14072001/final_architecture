@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:isolate';
 import 'package:dio/dio.dart' as dio;
 import 'package:flutter/foundation.dart';
 import 'base_result.dart';

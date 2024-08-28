@@ -13,6 +13,7 @@ class OnboardingController extends BaseController {
     "Get Started"
   ];
 
+
   void nextPage() {
     if (currentPage < onboardingPages.length - 1) {
       currentPage.value++;
