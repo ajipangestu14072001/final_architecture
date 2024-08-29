@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:final_architecture/services/network/environment.dart';
+import 'package:final_architecture/utils/Localization/LanguageUtility.dart';
+import 'package:final_architecture/utils/Localization/Localizable.dart';
 import 'package:final_architecture/utils/firebase/remote_config_utils.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -24,17 +26,26 @@ Future<void> main() async {
   };
   await RemoteConfigUtils.initializeRemoteConfig();
   await Environment.initialize('dev');
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  Locale? _locale;
+  MyApp({super.key});
+  Future<void> initLanguage() async {
+    try {
+      final lang = await LanguageUtility().getLang();
+      _locale = await Localizable().getLanguage(lang);
+    } catch (e) {
+      LogUtility.writeLog(e.toString());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'demo_app'.tr,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: createTextTheme(Theme.of(context).colorScheme),
@@ -42,6 +53,7 @@ class MyApp extends StatelessWidget {
       initialRoute: Screen.splash,
       getPages: AppRoutes.getPages(),
       navigatorObservers: [ObserverNavigator()],
+      locale: _locale,
     );
   }
 }

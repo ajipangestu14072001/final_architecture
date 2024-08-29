@@ -47,6 +47,7 @@ dependencies:
     git:
       url: https://gitlab.com/developer-kbni/flutter-utility.git
       ref: 4.0.0
+  flutter_localization: ^0.2.1
 
 
 dev_dependencies:
