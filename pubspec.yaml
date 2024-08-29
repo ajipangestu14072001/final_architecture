@@ -46,7 +46,7 @@ dependencies:
   shared_component:
     git:
       url: https://gitlab.com/developer-kbni/flutter-utility.git
-      ref: 3.0.1
+      ref: 4.0.0
 
 
 dev_dependencies:
