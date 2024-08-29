@@ -9,17 +9,53 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.find<SplashController>();
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FlutterLogo(size: 100),
-            SizedBox(height: 20),
-            CText("Test"),
-            Text(
-              'Your App Name',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            const FlutterLogo(size: 100),
+            const SizedBox(height: 20),
+            CText(
+              "Test - large",
+              textTheme: context.textTheme.displayLarge?.copyWith(
+                fontSize: 16
+              ),
+            ),
+            CText(
+              'Your App Name - medium',
+              textTheme: context.textTheme.displayMedium?.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.w700
+              ),
+            ),
+            CText(
+              'Your App Name - small',
+              textTheme: context.textTheme.displaySmall?.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.w800
+              ),
+            ),
+            CText(
+              'label large',
+              textTheme: context.textTheme.labelLarge?.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.w800
+              ),
+            ),
+            CText(
+              'label medium',
+              textTheme: context.textTheme.labelMedium?.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.w800
+              ),
+            ),
+            CText(
+              'label small',
+              textTheme: context.textTheme.labelSmall?.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.w800
+              ),
             ),
           ],
         ),

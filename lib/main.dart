@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_component/shared_component.dart';
 import 'app/route/app_routes.dart';
 import 'app/route/observer_navigator.dart';
 import 'app/route/screen.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        textTheme: createTextTheme(Theme.of(context).colorScheme),
       ),
       initialRoute: Screen.splash,
       getPages: AppRoutes.getPages(),
