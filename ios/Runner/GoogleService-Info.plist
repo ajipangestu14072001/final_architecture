@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyBs4yM30Td8DthaEBw-pEQvGwQAzRtT4KQ</string>
+	<string>AIzaSyATqY_LIMudoVzkG9YHBYH8354bd0KNkSQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>293060779165</string>
+	<string>209022451319</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.finalarchitecture</string>
+	<string>com.digitalcenter.basecode</string>
 	<key>PROJECT_ID</key>
-	<string>sample-ed0b9</string>
+	<string>digitalcenter-mobile-basecode</string>
 	<key>STORAGE_BUCKET</key>
-	<string>sample-ed0b9.appspot.com</string>
+	<string>digitalcenter-mobile-basecode.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:293060779165:ios:b09b07029eca91b3e24874</string>
+	<string>1:209022451319:ios:655b844f1e312f778b5072</string>
 </dict>
 </plist>

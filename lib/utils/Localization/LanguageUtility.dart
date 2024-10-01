@@ -1,4 +1,4 @@
-import 'package:final_architecture/utils/Constant.dart';
+import 'package:digitalcenter_mobile_basecode/utils/Constant.dart';
 import 'package:get_storage/get_storage.dart';
 
 enum LanguageCode { en, id, kr, th }

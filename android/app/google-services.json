@@ -1,45 +1,43 @@
 {
   "project_info": {
-    "project_number": "293060779165",
-    "project_id": "sample-ed0b9",
-    "storage_bucket": "sample-ed0b9.appspot.com"
+    "project_number": "209022451319",
+    "project_id": "digitalcenter-mobile-basecode",
+    "storage_bucket": "digitalcenter-mobile-basecode.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:293060779165:android:bc26ddbb4c99ea54e24874",
+        "mobilesdk_app_id": "1:209022451319:android:5809b536f7c4094c8b5072",
         "android_client_info": {
-          "package_name": "com.example.final_architecture"
+          "package_name": "com.digitalcenter.basecode"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "209022451319-tj72mh68d8uqb5jtu0cp2j2d73hk84ph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyAX64vqlqDGnWduwiM6wG656an7ueDYIOY"
+          "current_key": "AIzaSyCrANi8WvDXTtiUPR7YWklncMTjMBuo60Y"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:293060779165:android:1c5a6de824c1dad0e24874",
-        "android_client_info": {
-          "package_name": "com.example.finalarchitecture"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAX64vqlqDGnWduwiM6wG656an7ueDYIOY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209022451319-tj72mh68d8uqb5jtu0cp2j2d73hk84ph.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "209022451319-50mds7t4pc5i4r1fbe2a3lt8e2hpad89.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tanamemas"
+              }
+            }
+          ]
         }
       }
     }

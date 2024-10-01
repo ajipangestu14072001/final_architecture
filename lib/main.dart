@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:final_architecture/services/network/environment.dart';
-import 'package:final_architecture/utils/Localization/LanguageUtility.dart';
-import 'package:final_architecture/utils/Localization/Localizable.dart';
-import 'package:final_architecture/utils/firebase/remote_config_utils.dart';
+import 'package:digitalcenter_mobile_basecode/services/network/environment.dart';
+import 'package:digitalcenter_mobile_basecode/utils/Localization/LanguageUtility.dart';
+import 'package:digitalcenter_mobile_basecode/utils/Localization/Localizable.dart';
+import 'package:digitalcenter_mobile_basecode/utils/firebase/remote_config_utils.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
       title: 'demo_app'.tr,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        textTheme: createTextTheme(Theme.of(context).colorScheme),
+        textTheme: createTextTheme(),
       ),
       initialRoute: Screen.splash,
       getPages: AppRoutes.getPages(),

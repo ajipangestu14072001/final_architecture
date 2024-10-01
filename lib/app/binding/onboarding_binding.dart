@@ -1,4 +1,4 @@
-import 'package:final_architecture/view/onboarding/controller/onboarding_controller.dart';
+import 'package:digitalcenter_mobile_basecode/view/onboarding/controller/onboarding_controller.dart';
 import 'package:get/get.dart';
 
 class OnboardingBinding extends Bindings {

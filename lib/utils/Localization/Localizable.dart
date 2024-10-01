@@ -6,11 +6,11 @@
 
 import 'dart:ui';
 
-import 'package:final_architecture/utils/CacheManager.dart';
-import 'package:final_architecture/utils/Localization/en_translation.dart';
-import 'package:final_architecture/utils/Localization/id_translation.dart';
-import 'package:final_architecture/utils/Localization/ko_translation.dart';
-import 'package:final_architecture/utils/Localization/th_translation.dart';
+import 'package:digitalcenter_mobile_basecode/utils/CacheManager.dart';
+import 'package:digitalcenter_mobile_basecode/utils/Localization/en_translation.dart';
+import 'package:digitalcenter_mobile_basecode/utils/Localization/id_translation.dart';
+import 'package:digitalcenter_mobile_basecode/utils/Localization/ko_translation.dart';
+import 'package:digitalcenter_mobile_basecode/utils/Localization/th_translation.dart';
 import 'package:get/get.dart';
 
 class Localizable extends Translations with CacheManager {

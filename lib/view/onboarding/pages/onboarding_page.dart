@@ -1,4 +1,4 @@
-import 'package:final_architecture/base/base_page.dart';
+import 'package:digitalcenter_mobile_basecode/base/base_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/onboarding_controller.dart';
@@ -28,7 +28,8 @@ class OnboardingView extends BasePage<OnboardingController> {
                       children: [
                         Text(
                           controller.onboardingPages[index],
-                          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 20),
@@ -53,12 +54,14 @@ class OnboardingView extends BasePage<OnboardingController> {
                   Row(
                     children: List.generate(
                       controller.onboardingPages.length,
-                          (index) => Container(
+                      (index) => Container(
                         margin: const EdgeInsets.all(4),
                         width: 8,
                         height: 8,
                         decoration: BoxDecoration(
-                          color: controller.currentPage.value == index ? Colors.blue : Colors.grey,
+                          color: controller.currentPage.value == index
+                              ? Colors.blue
+                              : Colors.grey,
                           shape: BoxShape.circle,
                         ),
                       ),
@@ -67,7 +70,8 @@ class OnboardingView extends BasePage<OnboardingController> {
                   TextButton(
                     onPressed: controller.nextPage,
                     child: Text(
-                      controller.currentPage.value == controller.onboardingPages.length - 1
+                      controller.currentPage.value ==
+                              controller.onboardingPages.length - 1
                           ? "Finish"
                           : "Next",
                     ),

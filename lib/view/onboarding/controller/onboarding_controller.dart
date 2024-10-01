@@ -1,5 +1,5 @@
-import 'package:final_architecture/app/route/navigation_helper.dart';
-import 'package:final_architecture/base/base_controller.dart';
+import 'package:digitalcenter_mobile_basecode/app/route/navigation_helper.dart';
+import 'package:digitalcenter_mobile_basecode/base/base_controller.dart';
 import 'package:get/get.dart';
 
 import '../../../app/route/screen.dart';
@@ -12,7 +12,6 @@ class OnboardingController extends BaseController {
     "Discover Features",
     "Get Started"
   ];
-
 
   void nextPage() {
     if (currentPage < onboardingPages.length - 1) {

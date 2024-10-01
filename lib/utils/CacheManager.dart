@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:final_architecture/models/view_data_model/login_dm.dart';
-import 'package:final_architecture/utils/Parameters.dart';
+import 'package:digitalcenter_mobile_basecode/models/view_data_model/login_dm.dart';
+import 'package:digitalcenter_mobile_basecode/utils/Parameters.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shared_component/shared_component.dart';
 

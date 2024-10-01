@@ -1,4 +1,4 @@
-import 'package:final_architecture/base/base_controller.dart';
+import 'package:digitalcenter_mobile_basecode/base/base_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 

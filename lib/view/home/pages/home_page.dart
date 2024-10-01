@@ -1,4 +1,4 @@
-import 'package:final_architecture/base/base_page.dart';
+import 'package:digitalcenter_mobile_basecode/base/base_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_component/shared_component.dart';
@@ -20,10 +20,8 @@ class HomeView extends BasePage<HomeController> {
                   title: CText(
                     'Home Page ${controller.loginDM.token}',
                     // fontSize: 16,
-                    textTheme: context.textTheme.titleSmall?.copyWith(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700
-                    ),
+                    textTheme: context.textTheme.titleSmall
+                        ?.copyWith(fontSize: 16, fontWeight: FontWeight.w700),
                   ),
                 ),
                 expandedHeight: 100,

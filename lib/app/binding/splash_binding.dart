@@ -1,4 +1,4 @@
-import 'package:final_architecture/view/splash/controller/splash_controller.dart';
+import 'package:digitalcenter_mobile_basecode/view/splash/controller/splash_controller.dart';
 import 'package:get/get.dart';
 
 class SplashBinding extends Bindings {

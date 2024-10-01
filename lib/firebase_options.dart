@@ -50,19 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAX64vqlqDGnWduwiM6wG656an7ueDYIOY',
-    appId: '1:293060779165:android:1c5a6de824c1dad0e24874',
-    messagingSenderId: '293060779165',
-    projectId: 'sample-ed0b9',
-    storageBucket: 'sample-ed0b9.appspot.com',
+    apiKey: 'AIzaSyCrANi8WvDXTtiUPR7YWklncMTjMBuo60Y',
+    appId: '1:209022451319:android:5809b536f7c4094c8b5072',
+    messagingSenderId: '209022451319',
+    projectId: 'digitalcenter-mobile-basecode',
+    storageBucket: 'digitalcenter-mobile-basecode.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBs4yM30Td8DthaEBw-pEQvGwQAzRtT4KQ',
-    appId: '1:293060779165:ios:b09b07029eca91b3e24874',
-    messagingSenderId: '293060779165',
-    projectId: 'sample-ed0b9',
-    storageBucket: 'sample-ed0b9.appspot.com',
-    iosBundleId: 'com.example.finalarchitecture',
+    apiKey: 'AIzaSyATqY_LIMudoVzkG9YHBYH8354bd0KNkSQ',
+    appId: '1:209022451319:ios:655b844f1e312f778b5072',
+    messagingSenderId: '209022451319',
+    projectId: 'digitalcenter-mobile-basecode',
+    storageBucket: 'digitalcenter-mobile-basecode.appspot.com',
+    iosBundleId: 'com.digitalcenter.basecode',
   );
+
 }

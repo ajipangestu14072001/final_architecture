@@ -1,4 +1,4 @@
-import 'package:final_architecture/app/route/screen.dart';
+import 'package:digitalcenter_mobile_basecode/app/route/screen.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,15 +35,15 @@ class LoginPage extends BasePage<LoginController> {
               }
               return ElevatedButton(
                 // onPressed: controller.login,
-                onPressed: (){
+                onPressed: () {
                   // FirebaseCrashlytics.instance.crash();
                   Navigation.navigateToWithArguments(
                     Screen.home,
                     arguments: {
-                      'loginDM': LoginDM(token: 'example_token', userId: 'example_user_id'),
+                      'loginDM': LoginDM(
+                          token: 'example_token', userId: 'example_user_id'),
                     },
                   );
-
                 },
                 child: const Text('Login'),
               );

@@ -1,4 +1,4 @@
-import 'package:final_architecture/app/route/screen.dart';
+import 'package:digitalcenter_mobile_basecode/app/route/screen.dart';
 import 'package:get/get.dart';
 import '../../view/home/pages/home_page.dart';
 import '../../view/login/pages/login_page.dart';
