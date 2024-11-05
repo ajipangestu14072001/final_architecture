@@ -9,6 +9,10 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:-options"
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
@@ -30,11 +34,14 @@ if (flutterVersionName == null) {
 android {
     namespace = "com.example.final_architecture"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
-
+    ndkVersion = "25.1.8937393"
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 
     defaultConfig {

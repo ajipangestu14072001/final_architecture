@@ -1,7 +1,7 @@
 import 'package:final_architecture/base/base_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shared_component/shared_component.dart';
+// import 'package:shared_component/shared_component.dart';
 import '../controller/home_controller.dart';
 
 class HomeView extends BasePage<HomeController> {
@@ -11,63 +11,56 @@ class HomeView extends BasePage<HomeController> {
   Widget buildPage(BuildContext context) {
     return Scaffold(
       body: Obx(() => CustomScrollView(
-            slivers: [
-              SliverAppBar(
-                floating: true,
-                pinned: true,
-                snap: false,
-                flexibleSpace: FlexibleSpaceBar(
-                  title: CText(
-                    'Home Page ${controller.loginDM.token}',
-                    // fontSize: 16,
-                    textTheme: context.textTheme.titleSmall?.copyWith(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700
-                    ),
-                  ),
-                ),
-                expandedHeight: 100,
-              ),
-              SliverGrid(
-                delegate: SliverChildBuilderDelegate(
+        slivers: [
+          SliverAppBar(
+            floating: true,
+            pinned: true,
+            snap: false,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text('Home Page ${controller.loginDM.token}'),
+            ),
+            expandedHeight: 100,
+          ),
+          SliverGrid(
+            delegate: SliverChildBuilderDelegate(
                   (context, index) {
-                    final menuItem = controller.gridMenuItems[index];
-                    return Card(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.network(
-                            menuItem.imageUrl,
-                            height: 80,
-                            width: 80,
-                            fit: BoxFit.cover,
-                          ),
-                          const SizedBox(height: 8),
-                          Text(menuItem.title),
-                        ],
+                final menuItem = controller.gridMenuItems[index];
+                return Card(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.network(
+                        menuItem.imageUrl,
+                        height: 80,
+                        width: 80,
+                        fit: BoxFit.cover,
                       ),
-                    );
-                  },
-                  childCount: controller.gridMenuItems.length,
-                ),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                ),
-              ),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
+                      const SizedBox(height: 8),
+                      Text(menuItem.title),
+                    ],
+                  ),
+                );
+              },
+              childCount: controller.gridMenuItems.length,
+            ),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
                   (context, index) {
-                    return ListTile(
-                      title: Text(controller.items[index]),
-                    );
-                  },
-                  childCount: controller.items.length,
-                ),
-              ),
-            ],
-          )),
+                return ListTile(
+                  title: Text(controller.items[index]),
+                );
+              },
+              childCount: controller.items.length,
+            ),
+          ),
+        ],
+      )),
     );
   }
 }
